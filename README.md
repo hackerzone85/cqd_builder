@@ -398,3 +398,75 @@ print(report["per_group"])
 # {'NH2': {'requested': 65, 'achieved': 58, 'steric_fallback': 7},
 #  'COOH': {'requested': 65, 'achieved': 51, 'steric_fallback': 14}}
 ```
+
+---
+
+# Appendix: Verifying the Generated CQD Structure in VMD
+
+The generated `cqd_output_v3.pdb` contains complete **CONECT** records describing the covalent bonding network. The following VMD/TopoTools commands can be used to inspect the generated structure and verify its connectivity.
+
+## Load the structure
+
+```tcl
+package require topotools
+
+mol new cqd_output_v3.pdb waitfor all
+```
+
+## Assign atom properties
+
+```tcl
+topo guessatom element name
+topo guessatom radius element
+```
+
+## Verify the bonding network
+
+```tcl
+set sel [atomselect top all]
+
+puts "Number of atoms : [topo numatoms]"
+puts "Number of bonds : [topo numbonds]"
+```
+
+## Identify connected fragments
+
+```tcl
+puts "Fragments: [lsort -unique [$sel get fragment]]"
+```
+
+Expected output:
+
+```text
+0 1 2 3 4 5 6
+```
+
+## Count atoms in each fragment
+
+```tcl
+foreach f [lsort -unique [$sel get fragment]] {
+    set s [atomselect top "fragment $f"]
+    puts "Fragment $f : [$s num] atoms"
+    $s delete
+}
+```
+
+Example output:
+
+```text
+Fragment 0 : 147 atoms
+Fragment 1 : 223 atoms
+Fragment 2 : 306 atoms
+Fragment 3 : 300 atoms
+Fragment 4 : 304 atoms
+Fragment 5 : 222 atoms
+Fragment 6 : 158 atoms
+```
+
+## Interpretation
+
+The generated CQD consists of **seven covalently connected graphene layers** stacked in an **AB (Bernal)** arrangement.
+
+Each fragment corresponds to **one graphene layer together with its attached functional groups**. Since adjacent graphene layers interact through non-covalent (van der Waals/π–π) interactions rather than covalent bonds, observing **seven disconnected fragments is the expected and correct result**.
+
+The atom counts of all fragments should sum to the total number of atoms in the generated CQD.
