@@ -377,6 +377,9 @@ three independent ways:
 - `build_cqd()` — single high-level function for scripting/notebook use:
 
 ```python
+import sys
+# Replace this with the actual path to the folder containing 'cqd_builder.py'
+sys.path.append("/path/to/the/folder/containing/your/script")
 from cqd_builder import build_cqd, write_pdb, write_charge_csv
 
 structure, report = build_cqd(
