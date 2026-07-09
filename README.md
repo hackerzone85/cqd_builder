@@ -16,11 +16,11 @@ than being restricted to one group type at a time. See **§4 "Mixed-group
 functionalization"** below.
 
 The lattice/stacking engine (v2) matches the algorithm published in the
-Supporting Information of Paloncýová, Langer & Otyepka, *J. Chem. Theory
-Comput.* 2018, 14, 2076–2083 (the VMD "Carbon Dot Builder" plug-in,
-http://cd-builder.upol.cz). See **§6 "Fidelity to the reference algorithm"**
-below for exactly what is reproduced, what is an independently-verified
-equivalent construction, and why.
+Supporting Information of Paloncýová, Langer & Otyepka, [*J. Chem. Theory
+Comput.* 2018, 14, 2076–2083](https://pubs.acs.org/doi/10.1021/acs.jctc.7b01149) 
+(the VMD ["Carbon Dot Builder" plug-in](https://cd-builder.upol.cz/)). 
+See **§6 "Fidelity to the reference algorithm"** below for exactly what is 
+reproduced, what is an independently-verified equivalent construction, and why.
 
 ---
 
