@@ -399,6 +399,19 @@ print(report["per_group"])
 #  'COOH': {'requested': 65, 'achieved': 51, 'steric_fallback': 14}}
 ```
 
+## 9. References
+
+1. **Lattice Stacking Reference:**  
+   Paloncýová, M., Langer, M., & Otyepka, M. (2018). Structural Dynamics of Carbon Dots in Water and *N,N*-Dimethylformamide Probed by All-Atom Molecular Dynamics Simulations. *Journal of Chemical Theory and Computation*, 14(4), 2076–2083.  
+   DOI: [10.1021/acs.jctc.7b01149](https://doi.org)
+
+2. **Application & Functionalization Baseline:**  
+   Wolski, P. (2021). Molecular Dynamics Simulations of the pH-Dependent Adsorption of Doxorubicin on Carbon Quantum Dots. *Molecular Pharmaceutics*, 18(1), 257–266.  
+   DOI: [10.1021/acs.molpharmaceut.0c00895](https://doi.org/10.1021/acs.molpharmaceut.0c00895)
+
+3. **morphological structure of CDs:**
+Alas, M.O., Alkas, F.B., Aktas Sukuroglu, A. et al. Fluorescent carbon dots are the new quantum dots: an overview of their potential in emerging technologies and nanosafety. J Mater Sci 55, 15074–15105 (2020). DOI: [10.1007/s10853-020-05054-y](https://doi.org/10.1007/s10853-020-05054-y)
+   
 ---
 
 # Appendix: Verifying the Generated CQD Structure in VMD
